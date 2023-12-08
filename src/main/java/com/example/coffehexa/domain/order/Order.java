@@ -1,5 +1,6 @@
 package com.example.coffehexa.domain.order;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,5 +34,16 @@ public class Order {
         }
         status = Status.PREPARING;
         return this;
+    }
+
+    public BigDecimal getCost() {
+        return items.stream()
+                .map(LineItem::getCost)
+                .reduce(BigDecimal::add)
+                .orElse(BigDecimal.ZERO);
+    }
+
+    public UUID getId() {
+        return id;
     }
 }
