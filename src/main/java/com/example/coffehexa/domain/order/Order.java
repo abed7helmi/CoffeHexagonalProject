@@ -27,4 +27,11 @@ public class Order {
         return this;
     }
 
+    public Order markBeingPrepared() {
+        if (status != Status.READY) {
+            throw new IllegalStateException("Order is already paid");
+        }
+        status = Status.PREPARING;
+        return this;
+    }
 }

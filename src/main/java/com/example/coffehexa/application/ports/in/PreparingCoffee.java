@@ -6,6 +6,6 @@ import java.util.UUID;
 
 // préparation du café
 public interface PreparingCoffee {
-    Order startPreparingOrder(UUID orderId);
+    Order startPreparingOrder(UUID orderId) throws Exception;
     Order finishPreparingOrder(UUID orderId);
 }

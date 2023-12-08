@@ -11,6 +11,8 @@ import com.example.coffehexa.domain.payment.Receipt;
 import java.time.LocalDate;
 import java.util.UUID;
 
+//Le rôle de la CoffeeShopclasse est d'orchestrer les opérations sur les entités et les référentiels.
+// Il met en œuvre les ports primaires comme cas d'utilisation et utilise les ports secondaires comme référentiels.
 public class CoffeeShop implements OrderingCoffee {
     private final Orders orders;
     private final Payments payments;
